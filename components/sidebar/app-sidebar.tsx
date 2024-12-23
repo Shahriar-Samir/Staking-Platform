@@ -33,7 +33,7 @@ export function AppSidebar() {
     },
     {
       name: "Tokens",
-      link: "/",
+      link: "/tokens",
       icon: <Tokens />,
     },
     {
