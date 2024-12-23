@@ -12,6 +12,7 @@ import Swap from "../sidebar/icons/Swap";
 import Transactions from "../sidebar/icons/Transactions";
 import BuyCrypto from "../sidebar/icons/BuyCrypto";
 import { AlignLeft } from "lucide-react";
+import Link from "next/link";
 
 const HeaderLeft = () => {
   return (
@@ -23,18 +24,26 @@ const HeaderLeft = () => {
               <AlignLeft />
             </NavigationMenuTrigger>
             <NavigationMenuContent className="!w-[200px] p-2 flex flex-col gap-2">
-              <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
-                <Swap /> Home
-              </Button>
-              <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
-                <Transactions /> Transactions
-              </Button>
-              <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
-                <Swap /> Swap
-              </Button>
-              <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
-                <BuyCrypto /> Buy Crypto
-              </Button>
+              <Link href="/">
+                <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
+                  <Swap /> Home
+                </Button>
+              </Link>
+              <Link href="/wallet-analytics">
+                <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
+                  <Transactions /> Transactions
+                </Button>
+              </Link>
+              <Link href="/swap-interface">
+                <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
+                  <Swap /> Swap
+                </Button>
+              </Link>
+              <Link href="/buy-crypto">
+                <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white w-full">
+                  <BuyCrypto /> Buy Crypto
+                </Button>
+              </Link>
               <div className="flex flex-col md:hidden gap-2">
                 <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
                   Login UNS Domains
@@ -48,18 +57,27 @@ const HeaderLeft = () => {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="gap-2 justify-center hidden xl:flex">
-        <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
-          <Swap /> Home
-        </Button>
-        <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
-          <Transactions /> Transactions
-        </Button>
-        <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
-          <Swap /> Swap
-        </Button>
-        <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
-          <BuyCrypto /> Buy Crypto
-        </Button>
+        <Link href="/">
+          <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
+            <Swap /> Home
+          </Button>
+        </Link>
+        <Link href="/wallet-analytics">
+          <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
+            <Transactions /> Transactions
+          </Button>
+        </Link>
+
+        <Link href="/swap-interface">
+          <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
+            <Swap /> Swap
+          </Button>
+        </Link>
+        <Link href="/buy-crypto">
+          <Button className="!border-2 !border-[#00af91] !bg-transparent !text-black hover:!bg-[#125a4e] hover:!text-white dark:!text-white dark:!bg-[#125a4e] dark:hover:!bg-transparent dark:hover:!text-white">
+            <BuyCrypto /> Buy Crypto
+          </Button>
+        </Link>
       </div>
     </div>
   );
