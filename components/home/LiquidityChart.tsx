@@ -19,46 +19,50 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  PointElement, // Register PointElement for scatter/line chart points
-  LineElement // Register LineElement for rendering lines
+  PointElement,
+  LineElement
 );
 
-const LiquidityChart = ({ liquid }) => {
+interface LiquidityChartProps {
+  liquid: number[]; // Array of numbers for the liquidity data
+}
+
+const LiquidityChart: React.FC<LiquidityChartProps> = ({ liquid }) => {
   const options = {
-    responsive: true, // Ensures chart is responsive
-    maintainAspectRatio: false, // Disable aspect ratio to allow the chart to scale freely
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top",
+        position: "top" as const,
         labels: {
-          color: "black",
+          color: "#00AF91",
           font: {
             size: 14,
           },
-          margin: "20px",
         },
       },
     },
     scales: {
       A: {
-        type: "linear", // Ensure the scale is linear
-        position: "left",
+        type: "linear" as const,
+        position: "left" as const,
         ticks: {
           color: "#FF4C8B",
-          callback: function (value) {
-            if (parseInt(value) >= 1000) {
-              return (
-                "$" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              );
-            } else {
-              return "$" + value;
+          callback: function (value: number | string) {
+            const numericValue =
+              typeof value === "string" ? parseInt(value) : value;
+            if (numericValue >= 1000) {
+              return `$${numericValue
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
             }
+            return `$${numericValue}`;
           },
         },
       },
       B: {
-        type: "linear", // Ensure the scale is linear
-        position: "right",
+        type: "linear" as const,
+        position: "right" as const,
         ticks: {
           color: "#00AF91",
           max: 1,
@@ -74,6 +78,7 @@ const LiquidityChart = ({ liquid }) => {
   };
 
   const liquidData = {
+    labels: Array(liquid.length).fill(""), // Customize labels as needed
     datasets: [
       {
         label: "Liquidity Quote 7d ($)",
@@ -81,8 +86,8 @@ const LiquidityChart = ({ liquid }) => {
         data: liquid,
         borderColor: "#00AF91",
         backgroundColor: "#00AF91",
-        fill: false, // No fill between the line and x-axis
-        tension: 0.1, // Smooth the line
+        fill: false,
+        tension: 0.1,
       },
     ],
   };

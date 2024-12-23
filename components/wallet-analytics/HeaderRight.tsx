@@ -10,8 +10,9 @@ const HeaderRight = () => {
   const { setTheme } = useTheme();
   const [themeText, setThemeText] = useState("");
   const toggleTheme = (status: boolean) => {
-    status ? setTheme("dark") : setTheme("light");
-    status ? setThemeText("Dark") : setThemeText("Light");
+    const newTheme = status ? "dark" : "light";
+    setTheme(newTheme);
+    setThemeText(newTheme === "dark" ? "Dark" : "Light");
   };
 
   useEffect(() => {

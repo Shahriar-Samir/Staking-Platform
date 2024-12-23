@@ -1,6 +1,5 @@
 import DropdownMenuCheckboxes from "@/components/home/dropdown";
 import { Button } from "@/components/ui/button";
-import { DropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import {
   Table,
