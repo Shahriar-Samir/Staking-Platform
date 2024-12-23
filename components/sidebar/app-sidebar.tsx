@@ -38,12 +38,12 @@ export function AppSidebar() {
     },
     {
       name: "Pools",
-      link: "/",
+      link: "/pools",
       icon: <Pools />,
     },
     {
-      name: "Transactions",
-      link: "/",
+      name: "Wallet Analytics",
+      link: "/wallet-analytics",
       icon: <Transactions />,
     },
     {
@@ -59,7 +59,7 @@ export function AppSidebar() {
   ];
   return (
     <Sidebar>
-      <div className="w-full h-full flex items-center  flex-col">
+      <div className="w-full h-full flex items-center  flex-col border-e shadow-xl ">
         <Image
           width={250}
           height={250}

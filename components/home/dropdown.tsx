@@ -1,55 +1,52 @@
 "use client";
 
 import * as React from "react";
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
-
-function DropdownMenuCheckboxes() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
-  const [showPanel, setShowPanel] = React.useState<Checked>(false);
+function DropdownMenuRadios() {
+  const [selectedValue, setSelectedValue] = React.useState("Ethereum");
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">{selectedValue}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+        <DropdownMenuLabel>Select an option</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
+        <DropdownMenuRadioGroup
+          value={selectedValue}
+          onValueChange={setSelectedValue}
         >
-          Status Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
-          disabled
-        >
-          Activity Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
-        >
-          Panel
-        </DropdownMenuCheckboxItem>
+          <DropdownMenuRadioItem value="Ethereum">
+            Ethereum
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Polygon">Polygon</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Avalanche">
+            Avalanche
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Binance">Polygon</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Moonbeam">
+            Moonbeam
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Arbitrum">
+            Arbitrum
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Fantom">Fantom</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
 
-export default DropdownMenuCheckboxes;
+export default DropdownMenuRadios;

@@ -31,7 +31,7 @@ const LiquidityChart = ({ liquid }) => {
       legend: {
         position: "top",
         labels: {
-          color: "white",
+          color: "black",
           font: {
             size: 14,
           },
@@ -88,7 +88,7 @@ const LiquidityChart = ({ liquid }) => {
   };
 
   return (
-    <div className="w-full h-[400px] bg-[#dbdbdb] border rounded-md p-6">
+    <div className="w-full max-w-[500px] lg:max-w-[1000px] h-[400px] border-2 border-[#00AF91] shadow-lg dark:bg-[#2b2b2b] rounded-md p-6 dark:border-0 dark:shadow-[#00AF91]">
       <Line options={options} data={liquidData} />
     </div>
   );
