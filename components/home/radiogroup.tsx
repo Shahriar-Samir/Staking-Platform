@@ -1,8 +1,6 @@
 import React from "react";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Label } from "../ui/label";
-import { Button } from "../ui/button";
-import { DropdownMenuCheckboxItem } from "../ui/dropdown-menu";
 
 const RadiogroupComponent = () => {
   return (

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -11,17 +10,33 @@ import {
 
 const TableComp = () => {
   return (
-    <section className="mt-10">
-      <Table className="p-4 !rounded-xl border">
-        <TableHeader className="bg-gray-100">
+    <section className="mt-10 w-full max-w-[500px] md:max-w-[1200px] mx-auto">
+      <h1 className="text-2xl text-center font-medium">Tokens Analytics</h1>
+      <h2 className="text-lg text-center mt-2 text-[#00AF91]">Overview</h2>
+      <Table className="mt-5 !p-4  shadow-lg border-2 border-[#01AF8A] ">
+        <TableHeader className="border-2 border-[#01AF8A] dark:!text-white dark:bg-[#125a4e]">
           <TableRow className="">
-            <TableHead className="font-semibold">Name</TableHead>
-            <TableHead className="font-semibold">Liquidity</TableHead>
-            <TableHead className="font-semibold">Volume(24H)</TableHead>
-            <TableHead className="font-semibold">Volume(24H)</TableHead>
-            <TableHead className="font-semibold">Swap(24H)</TableHead>
-            <TableHead className="font-semibold">Fees(24H)</TableHead>
-            <TableHead className="font-semibold">%Fees(Yearly)</TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              Name
+            </TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              Liquidity
+            </TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              Volume(24H)
+            </TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              Volume(24H)
+            </TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              Swap(24H)
+            </TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              Fees(24H)
+            </TableHead>
+            <TableHead className="font-semibold dark:text-white">
+              %Fees(Yearly)
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
